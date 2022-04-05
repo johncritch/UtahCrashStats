@@ -11,6 +11,8 @@
                                                                href="https://datatables.net">official DataTables documentation</a>.
 </p>
 
+<h1>@Model.searchTerm</h1>
+
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -18,7 +20,34 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Crash ID</th>
+                        <th>Date</th>
+                        <th>Route</th>
+                        <th>Mile Point</th>
+                        <th>Road Name</th>
+                        <th>City</th>
+                        <th>County</th>
+                        <th>Severity ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.crashes)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.CRASH_ID)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CRASH_DATETIME)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ROUTE)</td>
+                            <td>@Html.DisplayFor(modelItem => item.MILEPOINT)</td>
+                            <td>@Html.DisplayFor(modelItem => item.MAIN_ROAD_NAME)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CITY)</td>
+                            <td>@Html.DisplayFor(modelItem => item.COUNTY_NAME)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CRASH_SEVERITY_ID)</td>
+                        </tr>
+                    }
+                </tbody>
                 @*<tr>
                     <td>Crash ID:</td>
                     <td>
@@ -112,6 +141,7 @@
                     </tr>
                 </tbody>*@
             </table>
+            <paging class="pagination" total-records="@Model.totalCrashes" show-total-pages="true" show-total-records="true" page-size="@Model.pageSize" page-no="@Model.pageNum" asp-route-search="@Model.searchTerm"></paging>
         </div>
     </div>
 </div>

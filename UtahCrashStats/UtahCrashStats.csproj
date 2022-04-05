@@ -17,6 +17,8 @@
     <None Remove="Views\Account\" />
     <None Remove="Controllers\" />
     <None Remove="Views\Shared\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.TagHelpers" />
+    <None Remove="LazZiya.TagHelpers" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -37,5 +39,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.23" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.23" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
+    <PackageReference Include="LazZiya.TagHelpers" Version="3.1.2" />
   </ItemGroup>
 </Project>
