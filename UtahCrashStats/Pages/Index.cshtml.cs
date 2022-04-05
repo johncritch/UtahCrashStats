@@ -24,5 +24,7 @@ namespace UtahCrashStats.Pages
         {
             Crash = await _context.Crash.Take(10).ToListAsync();
         }
+
+
     }
 }

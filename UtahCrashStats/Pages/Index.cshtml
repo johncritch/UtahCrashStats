@@ -1,198 +1,276 @@
 @page
 @model UtahCrashStats.Pages.IndexModel
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Index"; }
 
-<h1>Index</h1>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Welcome</h1>
+</div>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].CRASH_DATETIME)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].ROUTE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].MILEPOINT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].LAT_UTM_Y)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].LONG_UTM_X)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].MAIN_ROAD_NAME)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].CITY)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].COUNTY_NAME)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].CRASH_SEVERITY_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].WORK_ZONE_RELATED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].PEDESTRIAN_INVOLVED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].BICYCLIST_INVOLVED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].MOTORCYCLE_INVOLVED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].IMPROPER_RESTRAINT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].UNRESTRAINED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].DUI)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].INTERSECTION_RELATED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].WILD_ANIMAL_RELATED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].DOMESTIC_ANIMAL_RELATED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].OVERTURN_ROLLOVER)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].COMMERCIAL_MOTOR_VEH_INVOLVED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].TEENAGE_DRIVER_INVOLVED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].OLDER_DRIVER_INVOLVED)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].NIGHT_DARK_CONDITION)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].SINGLE_VEHICLE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].DISTRACTED_DRIVING)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].DROWSY_DRIVING)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Crash[0].ROADWAY_DEPARTURE)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Crash) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CRASH_DATETIME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ROUTE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MILEPOINT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LAT_UTM_Y)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LONG_UTM_X)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MAIN_ROAD_NAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CITY)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.COUNTY_NAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CRASH_SEVERITY_ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WORK_ZONE_RELATED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PEDESTRIAN_INVOLVED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BICYCLIST_INVOLVED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MOTORCYCLE_INVOLVED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IMPROPER_RESTRAINT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UNRESTRAINED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DUI)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.INTERSECTION_RELATED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WILD_ANIMAL_RELATED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DOMESTIC_ANIMAL_RELATED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OVERTURN_ROLLOVER)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.COMMERCIAL_MOTOR_VEH_INVOLVED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TEENAGE_DRIVER_INVOLVED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OLDER_DRIVER_INVOLVED)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NIGHT_DARK_CONDITION)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SINGLE_VEHICLE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DISTRACTED_DRIVING)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DROWSY_DRIVING)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ROADWAY_DEPARTURE)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.CRASH_ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CRASH_ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CRASH_ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<!-- Content Row -->
+<div class="row">
+    <div class="col-6">
+
+        <!-- Introduction -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Our Mission</h6>
+            </div>
+            <div class="card-body">
+                <h3>Every Stat Tells A Story</h3>
+                In 2021, there were [x] deaths resulting from automobile accidents in Utah.
+                While it’s easy to see this number as a simple statistic, every person in
+                that number had family, friends, and loved ones who mourn their loss.
+                <br><br>
+                In this site, you can view and update data gathered from crashes in Utah
+                from 2016, 2017, and 2019. We hope this data provides meaningful analysis
+                on how Utah can improve safety on the road.
+                <br><br>
+                Together we can make steps to save lives.
+                <br><br>
+                <i>Signed,</i>
+                <br>
+                <i>The Utah Crash Stats Team</i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-6">
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col">
+
+                <!-- Recent Crashes -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-secondary">Recent Crashes</h6>
+                    </div>
+                    <div class="card-body">
+                        Find recent crash reports here.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row">
+
+            <!-- Resource 1 -->
+            <div class="col">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-secondary">Further Reading</h6>
+                    </div>
+                    <div class="card-body">
+                        <a href="https://highwaysafety.utah.gov/crash-data/">Utah Crash Data</a><br>
+                        <a href="https://www.autoinjuries.com/utah-auto-accident-statistics/">Auto Injuries Crash Statistics</a><br>
+                        <a href="https://www.ksl.com/article/50322688/why-was-2021-the-deadliest-year-on-utah-roads-since-2002">2021 - The Deadliest Year On Utah Roads</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+@*<h1>Index</h1>
+
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].CRASH_DATETIME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].ROUTE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].MILEPOINT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].LAT_UTM_Y)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].LONG_UTM_X)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].MAIN_ROAD_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].CITY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].COUNTY_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].CRASH_SEVERITY_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].WORK_ZONE_RELATED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].PEDESTRIAN_INVOLVED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].BICYCLIST_INVOLVED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].MOTORCYCLE_INVOLVED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].IMPROPER_RESTRAINT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].UNRESTRAINED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].DUI)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].INTERSECTION_RELATED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].WILD_ANIMAL_RELATED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].DOMESTIC_ANIMAL_RELATED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].OVERTURN_ROLLOVER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].COMMERCIAL_MOTOR_VEH_INVOLVED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].TEENAGE_DRIVER_INVOLVED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].OLDER_DRIVER_INVOLVED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].NIGHT_DARK_CONDITION)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].SINGLE_VEHICLE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].DISTRACTED_DRIVING)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].DROWSY_DRIVING)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Crash[0].ROADWAY_DEPARTURE)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Crash) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CRASH_DATETIME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ROUTE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MILEPOINT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LAT_UTM_Y)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LONG_UTM_X)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MAIN_ROAD_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CITY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.COUNTY_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CRASH_SEVERITY_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WORK_ZONE_RELATED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PEDESTRIAN_INVOLVED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BICYCLIST_INVOLVED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MOTORCYCLE_INVOLVED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IMPROPER_RESTRAINT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UNRESTRAINED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DUI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.INTERSECTION_RELATED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WILD_ANIMAL_RELATED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOMESTIC_ANIMAL_RELATED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OVERTURN_ROLLOVER)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.COMMERCIAL_MOTOR_VEH_INVOLVED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TEENAGE_DRIVER_INVOLVED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OLDER_DRIVER_INVOLVED)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NIGHT_DARK_CONDITION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SINGLE_VEHICLE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DISTRACTED_DRIVING)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DROWSY_DRIVING)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ROADWAY_DEPARTURE)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.CRASH_ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.CRASH_ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.CRASH_ID">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@

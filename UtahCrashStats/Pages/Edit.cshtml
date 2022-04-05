@@ -1,9 +1,10 @@
 @page
 @model UtahCrashStats.Pages.EditModel
 
-@{
-    ViewData["Title"] = "Edit";
-}
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+@{ ViewData["Title"] = "Edit"; }
 
 <h1>Edit</h1>
 
