@@ -23,7 +23,7 @@
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Average Crashes Per Year
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">999</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">62626</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -42,10 +42,10 @@
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Average Crashes Per Month
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">999</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">5219</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -61,10 +61,10 @@
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Average Crashes Per Week
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">999</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">1182</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-calendar-week fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -80,10 +80,10 @@
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             Average Crashes Per Day
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">999</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">171</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        <i class="fas fa-calendar-day fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Types of Drivers</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Crashes by Weekday</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -152,13 +152,25 @@
                 </div>
                 <div class="mt-4 text-center small">
                     <span class="mr-2">
-                        <i class="fas fa-circle text-primary"></i> Distracted Driving
+                        <i class="fas fa-circle text-success"></i> Sunday
                     </span>
                     <span class="mr-2">
-                        <i class="fas fa-circle text-success"></i> DUI
+                        <i class="fas fa-circle text-info"></i> Monday
                     </span>
                     <span class="mr-2">
-                        <i class="fas fa-circle text-info"></i> Drowzy Driving
+                        <i class="fas fa-circle text-primary"></i> Tuesday
+                    </span>
+                    <span class="mr-2">
+                        <i class="fas fa-circle text-warner"></i> Wednesday
+                    </span><br />
+                    <span class="mr-2">
+                        <i class="fas fa-circle text-danger"></i> Thursday
+                    </span>
+                    <span class="mr-2">
+                        <i class="fas fa-circle text-secondary"></i> Friday
+                    </span>
+                    <span class="mr-2">
+                        <i class="fas fa-circle text-dark"></i> Saturday
                     </span>
                 </div>
             </div>
@@ -197,13 +209,19 @@
                 </div>
                 <div class="mt-4 text-center small">
                     <span class="mr-2">
-                        <i class="fas fa-circle text-primary"></i> Not Severe
+                        <i class="fas fa-circle text-success"></i> No Injury
                     </span>
                     <span class="mr-2">
-                        <i class="fas fa-circle text-success"></i> Severe
+                        <i class="fas fa-circle text-info"></i> Possible Injury
                     </span>
                     <span class="mr-2">
-                        <i class="fas fa-circle text-info"></i> Very Severe
+                        <i class="fas fa-circle text-primary"></i> Minor Injury
+                    </span><br />
+                    <span class="mr-2">
+                        <i class="fas fa-circle text-warning"></i> Serious Injury
+                    </span>
+                    <span class="mr-2">
+                        <i class="fas fa-circle text-danger"></i> Fatal Injury
                     </span>
                 </div>
             </div>
@@ -214,7 +232,7 @@
     <div class="col-xl-8 col-lg-5">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Average Crashes By Weekday</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Crashes by Type</h6>
             </div>
             <div class="card-body">
                 <div class="chart-bar">
@@ -238,7 +256,40 @@
                 <h6 class="m-0 font-weight-bold text-primary">Recent Crashes</h6>
             </div>
             <div class="card-body">
-                <p>Include five most recent crash entries here.</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Crash ID</th>
+                                <th>Date</th>
+                                <th>Route</th>
+                                <th>Mile Point</th>
+                                <th>Road Name</th>
+                                <th>City</th>
+                                <th>County</th>
+                                <th>Severity ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.crashes)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.CRASH_ID)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.CRASH_DATETIME)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ROUTE)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.MILEPOINT)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.MAIN_ROAD_NAME)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.CITY)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.COUNTY_NAME)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.CRASH_SEVERITY_ID)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <a class="btn btn-primary" asp-page="Crashes">
+                    Show All Crashes
+                </a>
             </div>
         </div>
 

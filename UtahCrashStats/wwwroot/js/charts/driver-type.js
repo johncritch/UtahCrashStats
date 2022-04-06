@@ -7,11 +7,11 @@ var ctx = document.getElementById("driver-type");
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ["Distracted Driving", "DUI", "Drowzy Driving"],
+    labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     datasets: [{
-      data: [55, 30, 15],
-      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      data: [20300, 39148, 38693, 39006, 40180, 42097, 31078],
+        backgroundColor: ['#1cc88a', '#36b9cc', '#4e73df', '#f6c23e', '#e74a3b', '#858796', '#5a5c69'],
+        hoverBackgroundColor: ['#17a673', '#2c9faf', '#2e59d9', '#dda20a', '#be2617', '#60616f', '#373840'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },

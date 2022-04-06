@@ -32,13 +32,13 @@ var ctx = document.getElementById("crashes-by-weekday");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    labels: ["Work Zone", "Pedestrian", "Bicyclist", "Motorcycle", "Improper Restraint", "Unrestrained", "DUI", "Intersection", "Wild Animal", "Domestic Animal", "Rollover", "Commercial Vehicle", "Teenage Driver", "Senior Driver", "Nighttime", "Single Vehicle", "Distracted Driving", "Drowsy Driving", "Roadway Departure"],
     datasets: [{
-      label: "Revenue",
+      label: "Crashes",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: [11496, 3244, 2153, 4334, 4001, 6227, 8576, 96520, 11625, 1451, 9454, 16492, 52439, 33639, 62655, 62637, 22557, 4959, 42078],
     }],
   },
   options: {
@@ -61,19 +61,19 @@ var myBarChart = new Chart(ctx, {
           drawBorder: false
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 19
         },
         maxBarThickness: 25,
       }],
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
+          max: 100000,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {
-            return '$' + number_format(value);
+            return '' + number_format(value);
           }
         },
         gridLines: {
@@ -103,7 +103,7 @@ var myBarChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
         }
       }
     },
