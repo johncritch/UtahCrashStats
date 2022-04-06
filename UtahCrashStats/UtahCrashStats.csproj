@@ -19,6 +19,7 @@
     <None Remove="Views\Shared\" />
     <None Remove="Microsoft.AspNetCore.Mvc.TagHelpers" />
     <None Remove="LazZiya.TagHelpers" />
+    <None Remove="bootstrap-select" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -41,5 +42,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.23" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
     <PackageReference Include="LazZiya.TagHelpers" Version="3.1.2" />
+    <PackageReference Include="bootstrap-select" Version="1.13.18" />
   </ItemGroup>
 </Project>
