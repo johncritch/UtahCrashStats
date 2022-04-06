@@ -110,7 +110,26 @@
                         <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                             <div class="input-group">
                                 <input type="text" name="search" class="form-control bg-light border-0 small" placeholder="Search Crashes"
-                                       aria-label="Search" aria-describedby="basic-addon2">
+                                       aria-label="Search" aria-describedby="basic-addon2" value=@ViewBag.SearchTerm>
+                                <input type="hidden" name="wo" value=@ViewBag.wo>
+                                <input type="hidden" name="pe" value=@ViewBag.pe>
+                                <input type="hidden" name="bi" value=@ViewBag.bi>
+                                <input type="hidden" name="mo" value=@ViewBag.mo>
+                                <input type="hidden" name="im" value=@ViewBag.im>
+                                <input type="hidden" name="un" value=@ViewBag.un>
+                                <input type="hidden" name="du" value=@ViewBag.du>
+                                <input type="hidden" name="inter" value=@ViewBag.inter>
+                                <input type="hidden" name="wi" value=@ViewBag.wi>
+                                <input type="hidden" name="dom" value=@ViewBag.dom>
+                                <input type="hidden" name="ro" value=@ViewBag.ro>
+                                <input type="hidden" name="co" value=@ViewBag.co>
+                                <input type="hidden" name="te" value=@ViewBag.te>
+                                <input type="hidden" name="se" value=@ViewBag.se>
+                                <input type="hidden" name="ni" value=@ViewBag.ni>
+                                <input type="hidden" name="si" value=@ViewBag.si>
+                                <input type="hidden" name="di" value=@ViewBag.di>
+                                <input type="hidden" name="dr" value=@ViewBag.dr>
+                                <input type="hidden" name="road" value=@ViewBag.road>
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit" asp-page="Crashes">
                                         <i class="fas fa-search fa-sm"></i>
