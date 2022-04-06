@@ -1,0 +1,21 @@
+﻿@page
+@model UtahCrashStats.Pages.StoryDeleteModel
+@{
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Crash</h4>
+    <hr />
+    <dl class="row">
+        @Html.DisplayFor(model => model.Story.STORY_CONTENT)
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Story.STORY_ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./StoryHome">Back to List</a>
+    </form>
+</div>
