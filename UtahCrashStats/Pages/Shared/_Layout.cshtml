@@ -18,10 +18,11 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="bootstrap-select/css/bootstrap-select.css" rel="stylesheet">
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="updateFilters()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -99,45 +100,95 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <form class="form-inline" style="width:100%" role="search">
+                        <div class="form-group">
+                            <input type="text" name="search" id="search" class="form-control bg-light border-0 small" placeholder="Search Crashes"
+                                   aria-label="Search" aria-describedby="basic-addon2" onkeypress="UpdateClear()" onchange="updateClear()" value=@ViewBag.SearchTerm>
+                        </div>
+                        <div class="form-group mx-3">
+                            <select multiple class="selectpicker" onchange="updateFilters()" name="filters" id="filters" title="Select Filters" data-actions-box="true">
+                                <optgroup label="Severity">
+                                    @{ var count = 0; }
+                                    @foreach (var filter in ViewBag.FiltersNamesDict)
+                                    {
+                                        @if (count < 5)
+                                        {
+                                            @if (ViewBag.FiltersDict[filter.Key] == 1)
+                                            {
+                                                <option selected value=@filter.Key>@filter.Value</option>
+                                            }
+                                            else
+                                            {
+                                                <option value=@filter.Key>@filter.Value</option>
+                                            }
+                                        }
+                                        count += 1;
+                                    }
+                                </optgroup>
+                                <optgroup label="Details">
+                                    @{ count = 0; }
+                                    @foreach (var filter in ViewBag.FiltersNamesDict)
+                                    {
+                                        @if (count >= 5)
+                                        {
+                                            @if (ViewBag.FiltersDict[filter.Key] == 1)
+                                            {
+                                                <option selected value=@filter.Key>@filter.Value</option>
+                                            }
+                                            else
+                                            {
+                                                <option value=@filter.Key>@filter.Value</option>
+                                            }
+                                        }
+                                        count++;
+                                    }
+                                </optgroup>
+                            </select>
+                        </div>
+                        <input type="hidden" value="@ViewBag.FilterInput" name="filterInput" id="filterInput" />
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-                    <form>
-                        <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group">
-                                <input type="text" name="search" class="form-control bg-light border-0 small" placeholder="Search Crashes"
-                                       aria-label="Search" aria-describedby="basic-addon2" value=@ViewBag.SearchTerm>
-                                <input type="hidden" name="wo" value=@ViewBag.wo>
-                                <input type="hidden" name="pe" value=@ViewBag.pe>
-                                <input type="hidden" name="bi" value=@ViewBag.bi>
-                                <input type="hidden" name="mo" value=@ViewBag.mo>
-                                <input type="hidden" name="im" value=@ViewBag.im>
-                                <input type="hidden" name="un" value=@ViewBag.un>
-                                <input type="hidden" name="du" value=@ViewBag.du>
-                                <input type="hidden" name="inter" value=@ViewBag.inter>
-                                <input type="hidden" name="wi" value=@ViewBag.wi>
-                                <input type="hidden" name="dom" value=@ViewBag.dom>
-                                <input type="hidden" name="ro" value=@ViewBag.ro>
-                                <input type="hidden" name="co" value=@ViewBag.co>
-                                <input type="hidden" name="te" value=@ViewBag.te>
-                                <input type="hidden" name="se" value=@ViewBag.se>
-                                <input type="hidden" name="ni" value=@ViewBag.ni>
-                                <input type="hidden" name="si" value=@ViewBag.si>
-                                <input type="hidden" name="di" value=@ViewBag.di>
-                                <input type="hidden" name="dr" value=@ViewBag.dr>
-                                <input type="hidden" name="road" value=@ViewBag.road>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit" asp-page="Crashes">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="form-group mr-3">
+                            <button class="btn btn-primary" type="submit" id="submit" onclick="updateFilters()" asp-page="Crashes">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                            <button hidden id="submitClear" asp-page="Crashes"></button>
+                        </div>
+                        <input type="hidden" value="@ViewBag.IsCrashesPage" id="isCrashesPage" />
+                        <div class="form-group" hidden id="clear">
+                            <button class="btn btn-secondary-outline" type="button" onclick="clearFilters()">
+                                Clear
+                            </button>
                         </div>
                     </form>
+
+                    <script>
+                        $('#filters').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+                            updateFilters();
+                        });
+
+                        function updateClear() {
+                            if ($('#search').val() != "" || ($('#filterInput').val() != "" && $('#filterInput').val() != 'name="filterInput"')) {
+                                $('#clear').attr('hidden', false)
+                            }
+                            else {
+                                $('#clear').attr('hidden', true)
+                            }
+                        }
+                        function updateFilters() {
+                            $('#filterInput').val($('#filters').val());
+                            updateClear();
+                        }
+                        function clearFilters() {
+                            $('#filterInput').val("");
+                            $('#search').val("");
+                            $('#filters').selectpicker('deselectAll');
+                            updateClear();
+                            if ($('#isCrashesPage').val() == "true") {
+                                $('#submit').click();
+                            }
+                        }
+
+                    </script>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -205,9 +256,9 @@
                         </li>
 
                     </ul>
-
                 </nav>
                 <!-- End of Topbar -->
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -247,6 +298,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script src="bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
