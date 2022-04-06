@@ -10,24 +10,608 @@
 }
 
 <!-- Page Heading -->
-
-<h1 class="h3 mb-2 text-gray-800">Crashes<a asp-page="Create" class="float-right">Add Crash</a></h1>
-<p class="mb-4">
-    DataTables is a third party plugin that is used to generate the demo table below.
-    For more information about DataTables, please visit the <a target="_blank"
-                                                               href="https://datatables.net">official DataTables documentation</a>.
-</p>
-
 <h1 class="h3 mb-2 text-gray-800">Crashes</h1>
+<table class="table table-hover table-bordered" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Crash ID</th>
+            <th>Date</th>
+            <th>Route</th>
+            <th>Mile</th>
+            <th>Road</th>
+            <th>City</th>
+            <th>County</th>
+            <th>Severity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-toggle="collapse" data-target="#0" class="clickable">
+            <td>11252552</td>
+            <td>12/31/2019 23:55:00</td>
+            <td>113</td>
+            <td>4.809</td>
+            <td>SR-113</td>
+            <td>MIDWAY</td>
+            <td>WASATCH</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="0" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#1" class="clickable">
+            <td>11248919</td>
+            <td>12/31/2019 23:51:00</td>
+            <td>108</td>
+            <td>12.737</td>
+            <td>STATE ROAD 108</td>
+            <td>WEST HAVEN</td>
+            <td>WEBER</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="1" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#2" class="clickable">
+            <td>11248185</td>
+            <td>12/31/2019 23:37:00</td>
+            <td>91</td>
+            <td>28.79</td>
+            <td>1675 N MAIN ST</td>
+            <td>NORTH LOGAN</td>
+            <td>CACHE</td>
+            <td>Severe Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="2" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#3" class="clickable">
+            <td>11248602</td>
+            <td>12/31/2019 23:36:00</td>
+            <td>2292</td>
+            <td>3.613</td>
+            <td>800 S</td>
+            <td>SALT LAKE CITY</td>
+            <td>SALT LAKE</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="3" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#4" class="clickable">
+            <td>11248169</td>
+            <td>12/31/2019 23:23:00</td>
+            <td>493513</td>
+            <td>0.1</td>
+            <td>9675 N EAGLEVIEW CIR; N 6270 WEST ST</td>
+            <td>HIGHLAND</td>
+            <td>UTAH</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="4" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#5" class="clickable">
+            <td>11248416</td>
+            <td>12/31/2019 23:21:00</td>
+            <td>358344</td>
+            <td>0.1</td>
+            <td>3395 S</td>
+            <td>WEST VALLEY CITY</td>
+            <td>SALT LAKE</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="5" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#6" class="clickable">
+            <td>11270994</td>
+            <td>12/31/2019 23:18:00</td>
+            <td>248</td>
+            <td>3.225</td>
+            <td>SR-248</td>
+            <td></td>
+            <td>SUMMIT</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="6" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#7" class="clickable">
+            <td>11254066</td>
+            <td>12/31/2019 22:43:00</td>
+            <td>75</td>
+            <td>0.211</td>
+            <td>1400 NORTH</td>
+            <td>SPRINGVILLE</td>
+            <td>UTAH</td>
+            <td>Possible Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="7" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#8" class="clickable">
+            <td>11248182</td>
+            <td>12/31/2019 22:25:00</td>
+            <td>357085</td>
+            <td>0.1</td>
+            <td>3413 W 10235 S</td>
+            <td>SOUTH JORDAN</td>
+            <td>SALT LAKE</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="8" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#9" class="clickable">
+            <td>11251733</td>
+            <td>12/31/2019 21:46:00</td>
+            <td>15</td>
+            <td>168.625</td>
+            <td>I-15</td>
+            <td></td>
+            <td>MILLARD</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="9" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<thead>
+    <tr>
+        <th>Crash ID</th>
+        <th>Date</th>
+        <th>Route</th>
+        <th>Mile</th>
+        <th>Road</th>
+        <th>City</th>
+        <th>County</th>
+        <th>Severity</th>
+    </tr>
+</thead>
+<tbody>
+    <tr data-toggle="collapse" data-target="#0" class="clickable">
+        <td>11252552</td>
+        <td>12/31/2019 23:55:00</td>
+        <td>113</td>
+        <td>4.809</td>
+        <td>SR-113</td>
+        <td>MIDWAY</td>
+        <td>WASATCH</td>
+        <td>No Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="0" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#1" class="clickable">
+        <td>11248919</td>
+        <td>12/31/2019 23:51:00</td>
+        <td>108</td>
+        <td>12.737</td>
+        <td>STATE ROAD 108</td>
+        <td>WEST HAVEN</td>
+        <td>WEBER</td>
+        <td>No Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="1" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#2" class="clickable">
+        <td>11248185</td>
+        <td>12/31/2019 23:37:00</td>
+        <td>91</td>
+        <td>28.79</td>
+        <td>1675 N MAIN ST</td>
+        <td>NORTH LOGAN</td>
+        <td>CACHE</td>
+        <td>Severe Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="2" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#3" class="clickable">
+        <td>11248602</td>
+        <td>12/31/2019 23:36:00</td>
+        <td>2292</td>
+        <td>3.613</td>
+        <td>800 S</td>
+        <td>SALT LAKE CITY</td>
+        <td>SALT LAKE</td>
+        <td>No Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="3" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#4" class="clickable">
+        <td>11248169</td>
+        <td>12/31/2019 23:23:00</td>
+        <td>493513</td>
+        <td>0.1</td>
+        <td>9675 N EAGLEVIEW CIR; N 6270 WEST ST</td>
+        <td>HIGHLAND</td>
+        <td>UTAH</td>
+        <td>No Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="4" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#5" class="clickable">
+        <td>11248416</td>
+        <td>12/31/2019 23:21:00</td>
+        <td>358344</td>
+        <td>0.1</td>
+        <td>3395 S</td>
+        <td>WEST VALLEY CITY</td>
+        <td>SALT LAKE</td>
+        <td>No Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="5" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#6" class="clickable">
+        <td>11270994</td>
+        <td>12/31/2019 23:18:00</td>
+        <td>248</td>
+        <td>3.225</td>
+        <td>SR-248</td>
+        <td></td>
+        <td>SUMMIT</td>
+        <td>No Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="6" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#7" class="clickable">
+        <td>11254066</td>
+        <td>12/31/2019 22:43:00</td>
+        <td>75</td>
+        <td>0.211</td>
+        <td>1400 NORTH</td>
+        <td>SPRINGVILLE</td>
+        <td>UTAH</td>
+        <td>Possible Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="7" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#8" class="clickable">
+        <td>11248182</td>
+        <td>12/31/2019 22:25:00</td>
+        <td>357085</td>
+        <td>0.1</td>
+        <td>3413 W 10235 S</td>
+        <td>SOUTH JORDAN</td>
+        <td>SALT LAKE</td>
+        <td>No Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="8" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+    <tr data-toggle="collapse" data-target="#9" class="clickable">
+        <td>11251733</td>
+        <td>12/31/2019 21:46:00</td>
+        <td>15</td>
+        <td>168.625</td>
+        <td>I-15</td>
+        <td></td>
+        <td>MILLARD</td>
+        <td>No Injury</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="9" class="collapse">Hidden by default</div>
+        </td>
+    </tr>
+</tbody>
+<table class="table table-hover table-bordered" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Crash ID</th>
+            <th>Date</th>
+            <th>Route</th>
+            <th>Mile</th>
+            <th>Road</th>
+            <th>City</th>
+            <th>County</th>
+            <th>Severity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-toggle="collapse" data-target="#0" class="clickable">
+            <td>11252552</td>
+            <td>12/31/2019 23:55:00</td>
+            <td>113</td>
+            <td>4.809</td>
+            <td>SR-113</td>
+            <td>MIDWAY</td>
+            <td>WASATCH</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="0" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#1" class="clickable">
+            <td>11248919</td>
+            <td>12/31/2019 23:51:00</td>
+            <td>108</td>
+            <td>12.737</td>
+            <td>STATE ROAD 108</td>
+            <td>WEST HAVEN</td>
+            <td>WEBER</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="1" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#2" class="clickable">
+            <td>11248185</td>
+            <td>12/31/2019 23:37:00</td>
+            <td>91</td>
+            <td>28.79</td>
+            <td>1675 N MAIN ST</td>
+            <td>NORTH LOGAN</td>
+            <td>CACHE</td>
+            <td>Severe Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="2" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#3" class="clickable">
+            <td>11248602</td>
+            <td>12/31/2019 23:36:00</td>
+            <td>2292</td>
+            <td>3.613</td>
+            <td>800 S</td>
+            <td>SALT LAKE CITY</td>
+            <td>SALT LAKE</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="3" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#4" class="clickable">
+            <td>11248169</td>
+            <td>12/31/2019 23:23:00</td>
+            <td>493513</td>
+            <td>0.1</td>
+            <td>9675 N EAGLEVIEW CIR; N 6270 WEST ST</td>
+            <td>HIGHLAND</td>
+            <td>UTAH</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="4" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#5" class="clickable">
+            <td>11248416</td>
+            <td>12/31/2019 23:21:00</td>
+            <td>358344</td>
+            <td>0.1</td>
+            <td>3395 S</td>
+            <td>WEST VALLEY CITY</td>
+            <td>SALT LAKE</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="5" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#6" class="clickable">
+            <td>11270994</td>
+            <td>12/31/2019 23:18:00</td>
+            <td>248</td>
+            <td>3.225</td>
+            <td>SR-248</td>
+            <td></td>
+            <td>SUMMIT</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="6" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#7" class="clickable">
+            <td>11254066</td>
+            <td>12/31/2019 22:43:00</td>
+            <td>75</td>
+            <td>0.211</td>
+            <td>1400 NORTH</td>
+            <td>SPRINGVILLE</td>
+            <td>UTAH</td>
+            <td>Possible Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="7" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#8" class="clickable">
+            <td>11248182</td>
+            <td>12/31/2019 22:25:00</td>
+            <td>357085</td>
+            <td>0.1</td>
+            <td>3413 W 10235 S</td>
+            <td>SOUTH JORDAN</td>
+            <td>SALT LAKE</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="8" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+        <tr data-toggle="collapse" data-target="#9" class="clickable">
+            <td>11251733</td>
+            <td>12/31/2019 21:46:00</td>
+            <td>15</td>
+            <td>168.625</td>
+            <td>I-15</td>
+            <td></td>
+            <td>MILLARD</td>
+            <td>No Injury</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="9" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
+<table class="table table-hover table-bordered" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Crash ID</th>
+            <th>Date</th>
+            <th>Route</th>
+            <th>Mile</th>
+            <th>Road</th>
+            <th>City</th>
+            <th>County</th>
+            <th>Severity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ var count = 0; }
+        @foreach (var item in Model.crashes)
+        {
+            <tr data-toggle="collapse" data-target="#@count" class="clickable">
+                <td>@Html.DisplayFor(modelItem => item.CRASH_ID)</td>
+                <td>@Html.DisplayFor(modelItem => item.CRASH_DATETIME)</td>
+                <td>@Html.DisplayFor(modelItem => item.ROUTE)</td>
+                <td>@Html.DisplayFor(modelItem => item.MILEPOINT)</td>
+                <td>@Html.DisplayFor(modelItem => item.MAIN_ROAD_NAME)</td>
+                <td>@Html.DisplayFor(modelItem => item.CITY)</td>
+                <td>@Html.DisplayFor(modelItem => item.COUNTY_NAME)</td>
+                @if (item.CRASH_SEVERITY_ID == 1)
+                {
+                    <td>No Injury</td>
+                }
+                else if (item.CRASH_SEVERITY_ID == 2)
+                {
+                    <td>Possible Injury</td>
+                }
+                else if (item.CRASH_SEVERITY_ID == 3)
+                {
+                    <td>Minor Injury</td>
+                }
+                else if (item.CRASH_SEVERITY_ID == 4)
+                {
+                    <td>Severe Injury</td>
+                }
+                else if (item.CRASH_SEVERITY_ID == 5)
+                {
+                    <td>Fatal Injury</td>
+                }
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="@count" class="collapse">Hidden by default</div>
+                </td>
+            </tr>
+            count++;
+        }
+    </tbody>
+</table>
 
-@*<h1>@Model.searchTerm</h1>*@
+<table class="table table-hover">
+    <thead>
+    <th>head1</th>
+    <th>head2</th>
+    <th>head3</th>
+    </thead>
 
-<!-- DataTales Example -->
+    <tbody>
+        <tr data-toggle="collapse" data-target="#accordion" class="clickable">
+            <td>Some Stuff</td>
+            <td>Some more stuff</td>
+            <td>And some more</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="accordion" class="collapse">Hidden by default</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Crashes -->
+<div class="accordion">
+    <div class="card">
+        @foreach (var item in Model.crashes)
+        {
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#@item.CRASH_ID">
+                        Collapsible Group Item #1
+                    </button>
+                </h2>
+            </div>
+
+            <div id="@item.CRASH_ID" class="collapse">
+                <div class="card-body">
+                    Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- DataTables Example -->
 <div class="card shadow mb-4">
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" width="100%" cellspacing="0">
+            <table class="table table-hover table-bordered" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Crash ID</th>

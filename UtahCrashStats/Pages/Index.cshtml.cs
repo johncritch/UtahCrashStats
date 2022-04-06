@@ -50,10 +50,10 @@ namespace UtahCrashStats.Pages
             }
         }
 
-        public IList<Crash> Crash { get;set; }
-
         public Dictionary<string, int> filtersDict { get; set; }
         public Dictionary<string, string> filtersNamesDict { get; set; }
+
+        public IList<Crash> Crash { get;set; }
 
         public async Task OnGetAsync()
         {

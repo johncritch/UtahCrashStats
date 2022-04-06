@@ -2,6 +2,12 @@
 @model ErrorModel
 @{
     ViewData["Title"] = "Error";
+    ViewData["Filtered"] = false;
+    ViewData["SearchTerm"] = "";
+    ViewData["FilterInput"] = "";
+    ViewData["FiltersNamesDict"] = Model.filtersNamesDict;
+    ViewData["FiltersDict"] = Model.filtersDict;
+    ViewData["IsCrashesPage"] = "false";
 }
 
 <h1 class="text-danger">Error.</h1>
