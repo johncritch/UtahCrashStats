@@ -36,6 +36,12 @@ namespace UtahCrashStats
 
             });
 
+            services.AddDbContext<StoryDbContext>(options =>
+            {
+                options.UseMySql(Configuration["ConnectionStrings:StoryDbConnection"]);
+
+            });
+
             services.AddDbContext<AppIdentityDbContext>(options =>
             {
                 options.UseSqlite(Configuration["ConnectionStrings:IdentityConnection"]);
