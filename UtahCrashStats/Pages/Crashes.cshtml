@@ -6,9 +6,7 @@
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Crashes</h1>
 <p class="mb-4">
-    DataTables is a third party plugin that is used to generate the demo table below.
-    For more information about DataTables, please visit the <a target="_blank"
-                                                               href="https://datatables.net">official DataTables documentation</a>.
+    Searching for: @Model.searchTerm
 </p>
 
 <h1>@Model.searchTerm</h1>
@@ -24,7 +22,7 @@
     <div class="collapse" id="collapseCardExample">
         <div class="card-body">
             <form>
-                <div class="row m-2">
+                <div class="row m-1">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="wo" name="wo" value=1>
                         <label class="form-check-label" for="wo">Work Zone</label>
@@ -102,7 +100,7 @@
                         <label class="form-check-label" for="road">Roadway Departure</label>
                     </div>
                 </div>
-                <div class="row m-2 pt-2">
+                <div class="row m-1 pt-2">
                     <button class="btn btn-primary" type="submit" asp-page="Crashes">Filter</button>
                 </div>
             </form>
@@ -120,26 +118,46 @@
                         <th>Crash ID</th>
                         <th>Date</th>
                         <th>Route</th>
-                        <th>Mile Point</th>
-                        <th>Road Name</th>
+                        <th>Mile</th>
+                        <th>Road</th>
                         <th>City</th>
                         <th>County</th>
-                        <th>Severity ID</th>
+                        <th>Severity</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model.crashes)
                     {
-                        <tr>
-                            <td>@Html.DisplayFor(modelItem => item.CRASH_ID)</td>
-                            <td>@Html.DisplayFor(modelItem => item.CRASH_DATETIME)</td>
-                            <td>@Html.DisplayFor(modelItem => item.ROUTE)</td>
-                            <td>@Html.DisplayFor(modelItem => item.MILEPOINT)</td>
-                            <td>@Html.DisplayFor(modelItem => item.MAIN_ROAD_NAME)</td>
-                            <td>@Html.DisplayFor(modelItem => item.CITY)</td>
-                            <td>@Html.DisplayFor(modelItem => item.COUNTY_NAME)</td>
-                            <td>@Html.DisplayFor(modelItem => item.CRASH_SEVERITY_ID)</td>
-                        </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.CRASH_ID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CRASH_DATETIME)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ROUTE)</td>
+                        <td>@Html.DisplayFor(modelItem => item.MILEPOINT)</td>
+                        <td>@Html.DisplayFor(modelItem => item.MAIN_ROAD_NAME)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CITY)</td>
+                        <td>@Html.DisplayFor(modelItem => item.COUNTY_NAME)</td>
+                        @if (item.CRASH_SEVERITY_ID == 1)
+                        {
+                            <td>No Injury</td>
+                        }
+                        else if (item.CRASH_SEVERITY_ID == 2)
+                        {
+                            <td>Possible Injury</td>
+                        }
+                        else if (item.CRASH_SEVERITY_ID == 3)
+                        {
+                            <td>Minor Injury</td>
+                        }
+                        else if (item.CRASH_SEVERITY_ID == 4)
+                        {
+                            <td>Severe Injury</td>
+                        }
+                        else if (item.CRASH_SEVERITY_ID == 5)
+                        {
+                            <td>Fatal Injury</td>
+                        }
+                        @*<td>@Html.DisplayFor(modelItem => item.CRASH_SEVERITY_ID)</td>*@
+                    </tr>
                     }
                 </tbody>
             </table>

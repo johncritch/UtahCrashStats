@@ -33,7 +33,10 @@ namespace UtahCrashStats.Pages
         public void OnGet(int p = 1, int s = 10, string search = "", int wo = 0, int pe = 0, int bi = 0, int mo = 0, int im = 0, int un = 0, int du = 0,
             int inter = 0, int wi = 0, int dom = 0, int ro = 0, int co = 0, int te = 0, int se = 0, int ni = 0, int si = 0, int di = 0, int dr = 0, int road = 0)
         {
-            searchTerm = search;
+            searchTerm = search + ", ";
+            if (wo == 1) {
+                searchTerm += "Work Zone, ";
+            }
 
 
             crashes = context.Crash
