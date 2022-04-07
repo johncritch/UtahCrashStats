@@ -61,11 +61,21 @@
             </div>
             <div class="form-group">
                 <label asp-for="Crash.CRASH_SEVERITY_ID" class="control-label"></label>
-                <input asp-for="Crash.CRASH_SEVERITY_ID" class="form-control" />
+                <select asp-for="Crash.CRASH_SEVERITY_ID" class="form-control selectpicker">
+                    <option value="1">No Injury</option>
+                    <option value="2">Possible Injury</option>
+                    <option value="3">Minor Injury</option>
+                    <option value="4">Severe Injury</option>
+                    <option value="5">Fatal Injury</option>
+                </select>
                 <span asp-validation-for="Crash.CRASH_SEVERITY_ID" class="text-danger"></span>
             </div>
+
+
             <div class="form-group">
                 <label asp-for="Crash.WORK_ZONE_RELATED" class="control-label"></label>
+                @*<input asp-for="Crash.WORK_ZONE_RELATED" type="checkbox" value="0" hidden class="form-control" />*@
+                @*<input asp-for="Crash.WORK_ZONE_RELATED" type="checkbox" value="true" class="form-control" />*@
                 <input asp-for="Crash.WORK_ZONE_RELATED" class="form-control" />
                 <span asp-validation-for="Crash.WORK_ZONE_RELATED" class="text-danger"></span>
             </div>
